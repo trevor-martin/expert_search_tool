@@ -19,6 +19,11 @@ def home(request):
                 name = form.cleaned_data['name'],
                 personal_website_url = form.cleaned_data['personal_website_url']
             )
+
+            # TODO: Request shortened url
+
+            # TODO: Extract headings from personal website
+
             expert.save()
             form = ExpertForm()
 
