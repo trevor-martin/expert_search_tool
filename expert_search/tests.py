@@ -7,7 +7,7 @@ class ExpertTestCase(TestCase):
         pass
 
     def test001(self):
-        A
+        self.assertEquals(1, 1)
 
 
 class FriendshipsTestCase(TestCase):
