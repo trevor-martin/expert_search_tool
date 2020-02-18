@@ -6,12 +6,7 @@ from django.db.models import Count
 from .forms import ExpertForm
 from .models import Expert, Friendships
 
-class ExpertInfo:
-    def __init__(self, pk=0, name='', short_url='', num_of_friends=0):
-        pk = pk
-        name = name
-        short_url = short_url
-        num_of_friends = num_of_friends
+import requests
 
 
 def home(request):
