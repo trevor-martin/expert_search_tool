@@ -1,0 +1,45 @@
+{% extends "expert_search/base.html" %}
+
+{% block content %}
+<h1>List of Experts</h1>
+<div class="container">
+    <div class="row">
+        {% for expert in experts %}
+            <div class="col-md-4">
+                <div class="p-4">
+                    <h4>Expert: {{ expert.name }}</h4>
+                    <div>Website: {{ expert.short_url }}</div>
+                    <div>Number of Friends: {{ expert.num_of_friends }}</div>
+                    <a href="{% url 'expert_detail' expert.pk %}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<h3>Add an Expert</h3>
+<form action="/expert_search/" method="POST">
+    {% csrf_token %}
+    <div>
+        <label>Name</label>
+    </div>
+    <div class="form-group">
+        {{ form.name }}
+    </div>
+    <div>
+        <label>Personal Website</label>
+    </div>
+    <div class="form-group">
+        {{ form.personal_website_url }}
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+{% endblock %}
+
